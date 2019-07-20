@@ -16,11 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from myapp.views import hello_world, genres, get_genre
+from myapp.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-
+    
     path('genres', genres, name='genres'),
     path('genres/<int:genre_id>', get_genre, name='genre'),
+    path('signup/', signup, name='signup'),
+    path('login/', user_login, name='login'),
+    path('logout/', user_logout, name='logout'),
 ]

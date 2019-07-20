@@ -5,12 +5,14 @@
     <title>ژانرها</title>
 </head>
 <body>
+<p>Hello, {{ username }}</p>
 {% for genre in genres %}
     <li>
         <a href="{% url 'genre' genre.id %}">{{ genre.id }} : {{ genre.name }}</a>
     </li>
 {% endfor %}
 <form method="post">
+    {% csrf_token %}
     {% if errors %}
         <ul>
             {% for error in errors %}

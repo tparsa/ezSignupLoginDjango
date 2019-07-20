@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>successfully logged in</title>
+</head>
+<body>
+    {% csrf_token %}
+    <p>Welcome {{ username }}</p>
+    <a href={% url 'genres' %}> Lets get back to genres </a>
+</body>
+</html>

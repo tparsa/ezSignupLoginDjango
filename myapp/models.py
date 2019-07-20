@@ -1,3 +1,4 @@
+from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 # Create your models here.
@@ -39,3 +40,8 @@ class Borrow(models.Model):
     borrow_time = models.DateTimeField(auto_now_add=True)
     duration = models.DurationField(choices=BORROW_DURATION_CHOICES, null=False, db_index=True)
     number = models.IntegerField(default=0)
+
+
+class Member(AbstractUser):
+    image = models.ImageField()
+    address = models.CharField(max_length=100, null=True)
