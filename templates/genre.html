@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ genre.name }}</title>
+</head>
+<body>
+{{ genre.name }}
+
+<form method="post">
+    {% csrf_token %}
+    <input type="submit" value="delete">
+    <input type="hidden" name="type" value="delete">
+</form>
+
+<form method="post">
+    {% csrf_token %}
+    <input type="text" name="name">
+    <input type="submit" value="edit">
+    <input type="hidden" name="type" value="update">
+</form>
+<a href="{% url 'genres' %}">ژانرها</a>
+</body>
+</html>

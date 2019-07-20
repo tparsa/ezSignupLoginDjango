@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ژانرها</title>
+</head>
+<body>
+{% for genre in genres %}
+    <li>
+        <a href="{% url 'genre' genre.id %}">{{ genre.id }} : {{ genre.name }}</a>
+    </li>
+{% endfor %}
+<form method="post">
+    {% if errors %}
+        <ul>
+            {% for error in errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <input type="text" name="name">
+
+    <input type="submit" value="new">
+</form>
+</body>
+</html>
